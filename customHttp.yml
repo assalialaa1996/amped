@@ -1,0 +1,62 @@
+applications:
+  - appRoot: gym
+    customHeaders:
+      - pattern: '**/*'
+        headers:
+          - key: 'Strict-Transport-Security'
+            value: 'max-age=63072000; includeSubDomains; preload'
+          - key: 'X-Frame-Options'
+            value: 'DENY'
+          - key: 'X-Content-Type-Options'
+            value: 'nosniff'
+          - key: 'Cache-Control'
+            value: 'public, max-age=86400, s-maxage=86400, immutable'
+          - key: 'Referrer-Policy'
+            value: 'same-origin'
+          - key: 'Feature-Policy'
+            value: "accelerometer 'none'; ambient-light-sensor 'none'; autoplay 'none'; camera 'none'; encrypted-media 'none'; focus-without-user-activation 'none'; fullscreen 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; midi 'none'; payment 'none'; picture-in-picture 'none'; speaker 'none'; sync-xhr 'none'; usb  'none'; vr 'none';"
+          - key: 'Permissions-Policy'
+            value: 'accelerometer=(); ambient-light-sensor=(); autoplay=(); camera=(); encrypted-media=(); focus-without-user-activation=(); fullscreen=(); geolocation=(); gyroscope=(); magnetometer=(); microphone=(); midi=(); payment=(); picture-in-picture=(); speaker=(); sync-xhr=(); usb =(); vr=();'
+
+  - appRoot: laundry
+    customHeaders:
+      - pattern: '**/*'
+        headers:
+          - key: 'Strict-Transport-Security'
+            value: 'max-age=63072000; includeSubDomains; preload'
+          - key: 'X-Frame-Options'
+            value: 'DENY'
+          - key: 'X-Content-Type-Options'
+            value: 'nosniff'
+          - key: 'Cache-Control'
+            value: 'public, max-age=86400, s-maxage=86400, immutable'
+          - key: 'Referrer-Policy'
+            value: 'same-origin'
+          - key: 'Feature-Policy'
+            value: "accelerometer 'none'; ambient-light-sensor 'none'; autoplay 'none'; camera 'none'; encrypted-media 'none'; focus-without-user-activation 'none'; fullscreen 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; midi 'none'; payment 'none'; picture-in-picture 'none'; speaker 'none'; sync-xhr 'none'; usb  'none'; vr 'none';"
+          - key: 'Permissions-Policy'
+            value: 'accelerometer=(); ambient-light-sensor=(); autoplay=(); camera=(); encrypted-media=(); focus-without-user-activation=(); fullscreen=(); geolocation=(); gyroscope=(); magnetometer=(); microphone=(); midi=(); payment=(); picture-in-picture=(); speaker=(); sync-xhr=(); usb =(); vr=();'
+
+  #: Experimental
+  - appRoot: tan
+    customHeaders:
+      - pattern: '**/*'
+        headers:
+          - key: 'Strict-Transport-Security'
+            value: 'max-age=63072000; includeSubDomains; preload'
+          - key: 'X-Frame-Options'
+            value: 'DENY'
+          - key: 'X-Content-Type-Options'
+            value: 'nosniff'
+          - key: 'Cache-Control'
+            value: 'public, max-age=86400, s-maxage=86400, immutable'
+          - key: 'Referrer-Policy'
+            value: 'same-origin'
+          - key: 'Feature-Policy'
+            value: "accelerometer 'none'; ambient-light-sensor 'none'; autoplay 'none'; camera 'none'; encrypted-media 'none'; focus-without-user-activation 'none'; fullscreen 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; midi 'none'; payment 'none'; picture-in-picture 'none'; speaker 'none'; sync-xhr 'none'; usb  'none'; vr 'none';"
+          - key: 'Permissions-Policy'
+            value: 'accelerometer=(); ambient-light-sensor=(); autoplay=(); camera=(); encrypted-media=(); focus-without-user-activation=(); fullscreen=(); geolocation=(); gyroscope=(); magnetometer=(); microphone=(); midi=(); payment=(); picture-in-picture=(); speaker=(); sync-xhr=(); usb =(); vr=();'
+      - pattern: '*.json'
+        headers:
+          - key: 'Cache-Control'
+            value: 'max-age=0, s-maxage=0, no-store, no-cache'

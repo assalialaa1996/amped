@@ -19,10 +19,10 @@
     "laundry"
   ],
   "scripts": {
-    "build": "lerna run build",
-    "export": "lerna run export",
+    "build": "lerna run build --stream",
+    "export": "lerna run export --stream",
     "release": "lerna version --conventional-commits --create-release github --yes",
-    "validate": "lerna run validate"
+    "validate": "lerna run validate --stream"
   },
   "dependencies": {},
   "devDependencies": {
