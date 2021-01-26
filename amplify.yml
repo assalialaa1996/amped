@@ -1,9 +1,6 @@
 version: 1
 applications:
   - appRoot: apps/gym
-    env:
-    variables:
-      NODE_ENV: production
     frontend:
       phases:
         preBuild:
@@ -23,9 +20,6 @@ applications:
           - node_modules/**/*
 
   - appRoot: apps/laundry
-    env:
-    variables:
-      NODE_ENV: production
     frontend:
       phases:
         preBuild:

@@ -1,5 +1,5 @@
 <script>
-	import successkid from 'images/successkid.jpg';
+	import gym from '../../static/gym.jpg';
 </script>
 
 <style>
@@ -43,7 +43,7 @@
 <h1>Great success!</h1>
 
 <figure>
-	<img alt="Success Kid" src="{successkid}">
+	<img alt="Gym" src="{gym}">
 	<figcaption>Have fun with Sapper!</figcaption>
 </figure>
 
