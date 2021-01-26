@@ -1,0 +1,47 @@
+---
+service: event-proxy
+
+frameworkVersion: '>=2.0.0'
+
+plugins:
+  - serverless-iam-roles-per-function
+  - serverless-python-requirements
+
+package:
+  include:
+    - ./*.py
+  exclude:
+    - '**/*'
+
+provider:
+  name: aws
+  runtime: python3.8
+  memorySize: 512
+  timeout: 30
+  deploymentBucket:
+    name: ${ssm:/alle/serverless-artifact-bucket}
+    maxPreviousDeploymentArtifacts: 10
+  versionFunctions: false
+  region: ${opt:region, 'us-east-1'}
+  stage: ${opt:stage, 'dev'}
+  environment:
+    STAGE: ${self:provider.stage}
+    REGION: ${self:provider.region}
+
+functions:
+  githubEventsReceive:
+    handler: github_events.receive
+    timeout: 15
+    description: Receive and validate GitHub webhooks before passing along payload
+    iamRoleStatementsInherit: true
+    iamRoleStatementsName: ${self:service}-${self:provider.stage}-github-events-receive
+    iamRoleStatements:
+      - Effect: Allow
+        Action:
+          - ssm:GetParameter
+        Resource:
+          - arn:aws:ssm:us-east-1:028920223318:parameter/amped/github_webhook_secret
+    events:
+      - httpApi:
+          method: POST
+          path: /github/event

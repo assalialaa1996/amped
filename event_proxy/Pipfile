@@ -1,0 +1,41 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+aws-lambda-powertools = "*"
+boto3 = "*"
+botocore = "*"
+
+[dev-packages]
+black = "*"
+flake8 = "*"
+flake8-polyfill = "*"
+ipython = "*"
+isort = "*"
+moto = "*"
+mypy = "*"
+pyflakes = "*"
+pytest = "*"
+pytest-cov = "*"
+pytest-mock = "*"
+radon = "*"
+responses = "*"
+
+[requires]
+python_version = "3.8"
+
+[scripts]
+complexity = "python3 -m radon cc -a ."
+cover = "python3 -m coverage html"
+format = "python3 -m black ."
+halstead = "python3 -m radon hal ."
+imports = "python3 -m isort . --profile black"
+lint = "python3 -m flake8 . --count --statistics --benchmark --exit-zero --config=../../.flake8"
+test = "echo 'write tests'" # "python3 -m pytest --disable-pytest-warnings"
+test_coverage = "python3 -m pytest --disable-pytest-warnings --cov=. --cov-config=../../.coveragerc --cov-report=term"
+typecheck = "python3 -m mypy ."
+
+[pipenv]
+allow_prereleases = true

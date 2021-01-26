@@ -1,0 +1,24 @@
+{
+  "name": "event_proxy",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Proxies GitHub events into actions performed by Amplify",
+  "license": "Apache-2.0",
+  "scripts": {
+    "clean:all": "git clean -fXd && pipenv --rm",
+    "complexity": "pipenv run complexity",
+    "deploy": "sls deploy -v",
+    "format": "pipenv run imports && pipenv run format",
+    "lint": "pipenv run lint",
+    "remove": "sls remove -v",
+    "setup": "pipenv install --dev --pre",
+    "test": "pipenv run test",
+    "test:coverage": "pipenv run test_coverage && pipenv run cover && open htmlcov/index.html",
+    "typecheck": "pipenv run typecheck"
+  },
+  "dependencies": {
+    "serverless": "^2.20.1",
+    "serverless-iam-roles-per-function": "^3.1.0",
+    "serverless-python-requirements": "^5.1.0"
+  }
+}

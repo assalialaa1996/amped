@@ -1,0 +1,22 @@
+[tool.black]
+line-length = 120
+target-version = ['py38']
+include = '\.pyi?$'
+skip-string-normalization = true
+verbose = true
+exclude = '''
+/(
+    \.git
+  | \.github
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+  | \.vscode
+  | \.serverless
+  | node_modules
+)/
+'''
