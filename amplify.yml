@@ -1,6 +1,6 @@
 version: 1
 applications:
-  - appRoot: gym
+  - appRoot: apps/gym
     env:
     variables:
       NODE_ENV: production
@@ -22,7 +22,7 @@ applications:
         paths:
           - node_modules/**/*
 
-  - appRoot: laundry
+  - appRoot: apps/laundry
     env:
     variables:
       NODE_ENV: production
@@ -44,7 +44,7 @@ applications:
         paths:
           - node_modules/**/*
 
-  - appRoot: tan
+  - appRoot: apps/tan
     frontend:
       phases:
         preBuild:

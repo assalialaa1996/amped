@@ -1,5 +1,5 @@
 applications:
-  - appRoot: gym
+  - appRoot: apps/gym
     customHeaders:
       - pattern: '**/*'
         headers:
@@ -18,7 +18,7 @@ applications:
           - key: 'Permissions-Policy'
             value: 'accelerometer=(); ambient-light-sensor=(); autoplay=(); camera=(); encrypted-media=(); focus-without-user-activation=(); fullscreen=(); geolocation=(); gyroscope=(); magnetometer=(); microphone=(); midi=(); payment=(); picture-in-picture=(); speaker=(); sync-xhr=(); usb =(); vr=();'
 
-  - appRoot: laundry
+  - appRoot: apps/laundry
     customHeaders:
       - pattern: '**/*'
         headers:
@@ -38,7 +38,7 @@ applications:
             value: 'accelerometer=(); ambient-light-sensor=(); autoplay=(); camera=(); encrypted-media=(); focus-without-user-activation=(); fullscreen=(); geolocation=(); gyroscope=(); magnetometer=(); microphone=(); midi=(); payment=(); picture-in-picture=(); speaker=(); sync-xhr=(); usb =(); vr=();'
 
   #: Experimental
-  - appRoot: tan
+  - appRoot: apps/tan
     customHeaders:
       - pattern: '**/*'
         headers:

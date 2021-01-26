@@ -14,9 +14,7 @@
   "homepage": "https://github.com/clowdhaus/amped#readme",
   "private": true,
   "workspaces": [
-    "gym",
-    "tan",
-    "laundry"
+    "apps/*"
   ],
   "scripts": {
     "build": "lerna run build --stream",

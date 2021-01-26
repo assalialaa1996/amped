@@ -1,8 +1,6 @@
 {
   "packages": [
-    "gym",
-    "tan",
-    "laundry"
+    "apps/*"
   ],
   "useWorkspaces": true,
   "npmClient": "yarn",
