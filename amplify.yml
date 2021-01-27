@@ -9,10 +9,11 @@ frontend:
       commands:
         - nvm use 14
         - yarn lerna run export --scope $APPLICATION
+        - cp -r apps/${APPLICATION}/__sapper__/export/* deploy
   artifacts:
-    baseDirectory: apps/${APPLICATION}/__sapper__/export
+    baseDirectory: deploy
     files:
       - '**/*'
   cache:
-    paths:
-      - node_modules/**/*
+      paths:
+        - node_modules/**/*
