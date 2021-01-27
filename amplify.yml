@@ -1,58 +1,18 @@
 version: 1
-applications:
-  - appRoot: apps/gym
-    frontend:
-      phases:
-        preBuild:
-          commands:
-            - nvm install 14
-            - yarn --prefer-offline
-        build:
-          commands:
-            - nvm use 14
-            - yarn export
-      artifacts:
-        baseDirectory: __sapper__/export
-        files:
-          - '**/*'
-      cache:
-        paths:
-          - node_modules/**/*
-
-  - appRoot: apps/laundry
-    frontend:
-      phases:
-        preBuild:
-          commands:
-            - nvm install 14
-            - yarn --prefer-offline
-        build:
-          commands:
-            - nvm use 14
-            - yarn export
-      artifacts:
-        baseDirectory: __sapper__/export
-        files:
-          - '**/*'
-      cache:
-        paths:
-          - node_modules/**/*
-
-  - appRoot: apps/tan
-    frontend:
-      phases:
-        preBuild:
-          commands:
-            - nvm install 14
-            - yarn --prefer-offline
-        build:
-          commands:
-            - nvm use 14
-            - yarn export
-      artifacts:
-        baseDirectory: __sapper__/export
-        files:
-          - '**/*'
-      cache:
-        paths:
-          - node_modules/**/*
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - nvm install 14
+        - yarn --prefer-offline
+    build:
+      commands:
+        - nvm use 14
+        - yarn lerna run export --scope $APPLICATION
+  artifacts:
+    baseDirectory: apps/${APPLICATION}/__sapper__/export
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
