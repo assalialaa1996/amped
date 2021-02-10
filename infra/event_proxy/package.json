@@ -17,7 +17,7 @@
     "typecheck": "pipenv run typecheck"
   },
   "dependencies": {
-    "serverless": "^2.20.1",
+    "serverless": "^2.23.0",
     "serverless-iam-roles-per-function": "^3.1.0",
     "serverless-python-requirements": "^5.1.0"
   }
